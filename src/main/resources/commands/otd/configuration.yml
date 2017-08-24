@@ -1,0 +1,14 @@
+--- # OTD Configuration related commands
+- create:
+   - props = {}
+   - props['configuration'] = 'test_config'
+   - props['listener-port'] = '8002'
+   - props['server-name'] = 'docker.com'
+   - props['origin-server-type'] = 'http'
+   - props['origin-server'] = 'localhost:7005,localhost:7006'
+   - otd_createConfiguration(props)
+  
+
+- delete
+
+- update
