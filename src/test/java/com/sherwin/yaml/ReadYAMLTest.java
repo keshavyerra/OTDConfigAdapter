@@ -10,6 +10,7 @@ import org.junit.Test;
 
 import com.esotericsoftware.yamlbeans.YamlException;
 import com.esotericsoftware.yamlbeans.YamlReader;
+import com.sherwin.otd.commands.bean.Commands;
 import com.sherwin.yaml.ReadYAML;
 
 public class ReadYAMLTest {
@@ -23,20 +24,42 @@ public class ReadYAMLTest {
 	}
 	
 	
-	@Test
+	@Ignore
     public void givenYAMLFileThenReadTheContent() {
 		//Get file from resources folder
 			ClassLoader classLoader = getClass().getClassLoader();
 			File file = new File(classLoader.getResource("commands/otd/configuration.yml").getFile());
 		
-			Object objectFromFile  = readYAML.readYAMLFile(file);
+			//Object objectFromFile  = readYAML.readYAMLFile(file);
 
-			Object objectFromFilepath = readYAML.readYAMLFile("commands/otd/configuration.yml");
+			//Object objectFromFilepath = readYAML.readYAMLFile("commands/otd/configuration.yml");
 
-			System.out.println(objectFromFile);
-			System.out.println(objectFromFilepath);
         
     }
+	
+	@Ignore
+    public void givenYAMLFileThenReadTheContentAndReturnMap() {
+
+/*			Map<String, Object> mapFromFile  = readYAML.readYAMLFiletoMap("commands/otd/configuration.yml");
+
+		    
+			 for (String key : mapFromFile.keySet()) {
+				   System.out.println("------------------------------------------------");
+				   System.out.println("key: " + key + " Value: " +  mapFromFile.get(key));
+				}
+
+        */
+    }
+	
+	
+	@Test
+    public void givenYAMLFileThenReadTheContentAndReturnMappingBeanClass() {
+
+		Commands commands = readYAML.parseYAMLFiletoClass("commands/otd/configuration.yml", Commands.class);
+		System.out.println("*****"+ commands.getCreate());
+        
+    }
+
 
 	@Ignore
 	public void read(){

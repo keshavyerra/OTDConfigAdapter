@@ -1,14 +1,35 @@
 --- # OTD Configuration related commands
-- create:
-   - props = {}
-   - props['configuration'] = 'test_config'
-   - props['listener-port'] = '8002'
-   - props['server-name'] = 'docker.com'
-   - props['origin-server-type'] = 'http'
-   - props['origin-server'] = 'localhost:7005,localhost:7006'
-   - otd_createConfiguration(props)
+create:
+  - props = {}
+  - props['configuration'] = 'test_config'
+  - props['listener-port'] = '8002'
+  - props['server-name'] = 'docker.com'
+  - props['origin-server-type'] = 'http'
+  - props['origin-server'] = 'localhost:7005,localhost:7006'
+  - otd_createConfiguration(props)
+
+  - props = {}
+  - props['configuration'] = 'test_config'
+  - props['machine'] = 'machine1'
+  - otd_createInstance(props)
+
+  - edit()
+  - startEdit(60000, 120000)
+  - activate(5000, block='true')
+
+  - start('otd_test_config_machine1')
   
+  
+delete:
+  - shutdown('otd_test_config_machine1')
+  - props = {}
+  - props['configuration'] = 'test_config'
+  - props['instance'] = 'otd_test_config_machine1'
+  - otd_deleteInstance(props)
+  - props = {}
+  - props['configuration'] = 'test_config'
+  - otd_deleteConfiguration(props)
 
-- delete
-
-- update
+validate:
+  - props['configuration'] = 'test_config'
+  - otd_getConfiguration(props)

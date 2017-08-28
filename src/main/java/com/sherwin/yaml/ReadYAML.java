@@ -1,42 +1,44 @@
 package com.sherwin.yaml;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.Map;
 
-import com.esotericsoftware.yamlbeans.YamlException;
-import com.esotericsoftware.yamlbeans.YamlReader;
+import org.yaml.snakeyaml.Yaml;
+import org.yaml.snakeyaml.constructor.Constructor;
+
 
 public class ReadYAML {
 
-	public <T> T readYAMLFile(File yamlFile){
-	    T obj = null;
-	    try {
-	        YamlReader reader = new YamlReader(new FileReader(yamlFile));
-	        obj = (T) reader.read();
-	 
-	    } catch (Exception ex) {
-	    }
-	    return  obj;
-	}
 	
-	public <T> T readYAMLFile(String filePath){
+	public <T> T readYAMLFileAsPlainObject(String filePath){
 	    T obj = null;
-	    try {
+/*	    try {
 	    	File yamlFile = loadYAMLFile(filePath);
 	        YamlReader reader = new YamlReader(new FileReader(yamlFile));
 	        obj = (T) reader.read();
 	 
 	    } catch (Exception ex) {
-	    }
+	    }*/
 	    return  obj;
 	}
 	
+
+	
+	
+	public <T> T parseYAMLFiletoClass(String filePath, Class mappingClass){
+        Object object = null;
+        
+        Yaml yaml = new Yaml(new Constructor(mappingClass));
+        
+        try(InputStream in = ClassLoader.getSystemResourceAsStream(filePath)) {
+            object = yaml.load(in);
+        } catch(Exception ex) {
+            ex.printStackTrace();
+        }
+        
+        return (T) object;        
+   
+	}
 	
 	public File loadYAMLFile(String filePath){
 		ClassLoader classLoader = getClass().getClassLoader();
