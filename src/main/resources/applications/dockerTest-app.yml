@@ -1,0 +1,10 @@
+name: otdDockerTest
+description: This is a Test application used for testing OTD docker container
+url:
+backend_server_url:
+
+
+
+Webserver:
+ type: OTD
+ 
