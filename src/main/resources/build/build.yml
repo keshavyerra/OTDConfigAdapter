@@ -1,0 +1,5 @@
+--- # Deploy parameters used pushing above built OTD Config to respective servers
+environment: dev
+server_names: test 
+server_urls: test1 , test2
+tags: 

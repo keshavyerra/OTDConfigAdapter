@@ -1,0 +1,22 @@
+# Build parameters used for constructing OTD Config items
+build:
+  applications: 
+   - test1
+   - test2 
+  actions: 
+   - create
+   - delete
+  tags: 
+   - dcs
+
+
+# Deploy parameters used pushing above built OTD Config to respective servers
+deploy: 
+  environments: 
+   - dev
+  server_names: 
+   - test 
+  server_urls: 
+   - connect('weblogic', 'welcome1','t3://e5afafb2da74:7001')
+  tags:
+   - testTag 
