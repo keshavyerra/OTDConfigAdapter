@@ -1,0 +1,14 @@
+name: dcsotd
+servers: 
+
+configurations: 
+ configuration: 
+  name: dcsotdTier0
+ configuration: 
+  name: dcsotdTier1
+ configuration: 
+  name: dcsotdTier2
+ configuration: 
+  name: dcsotdTier3  
+  
+ 

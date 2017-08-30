@@ -1,0 +1,8 @@
+name: dcsotd
+servers: 
+
+configurations: 
+ configuration: 
+  name: test_config
+
+ 
