@@ -1,0 +1,20 @@
+name: otdDockerTest
+description: This is a Test application used for testing OTD docker container
+urls: 
+  internal: "local.com:8002"
+  external: "local.com:8002"
+app_server_url: 
+  - "localhost:7005" 
+  - "localhost:7006"
+dependencies:
+  test_dependencies1: test1
+  test_dependencies2: test2
+
+webserver:
+  type: OTD
+  server_name: DCS
+  tier: 2
+ 
+ 
+  
+ 

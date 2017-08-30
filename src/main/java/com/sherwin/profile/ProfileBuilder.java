@@ -22,11 +22,11 @@ public class ProfileBuilder {
 	public ProfileBuilder(){
 		
 		readYAML = new ReadYAML();
-		LoadBuildPropsFromYAMLFile();
+		LoadProfilePropsFromYAMLFile();
 		
 	}
 	
-	public void LoadBuildPropsFromYAMLFile(){
+	public void LoadProfilePropsFromYAMLFile(){
 		
 		profileProperties = readYAML.parseYAMLFiletoClass("profile/profile.yml", Profile.class);
 	} 

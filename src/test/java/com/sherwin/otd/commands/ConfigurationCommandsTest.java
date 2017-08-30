@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.junit.Test;
 
+import com.sherwin.otd.commands.ConfigurationCommands;
+
 
 public class ConfigurationCommandsTest {
 

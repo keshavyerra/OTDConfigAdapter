@@ -1,4 +1,4 @@
-package com.sherwin.build;
+package com.sherwin.profile;
 
 import org.junit.Ignore;
 import org.junit.Test;

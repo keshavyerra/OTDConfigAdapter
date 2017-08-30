@@ -21,7 +21,7 @@ public class ConfigurationCommands {
 	
 	public void LoadConfigCommandsFromYAMLFile(){
 		
-		allConfigCommands = readYAML.parseYAMLFiletoClass("commands/otd/configuration.yml", Commands.class);
+		allConfigCommands = readYAML.parseYAMLFiletoClass("otd/commands/configuration.yml", Commands.class);
 	} 
 	
 	
