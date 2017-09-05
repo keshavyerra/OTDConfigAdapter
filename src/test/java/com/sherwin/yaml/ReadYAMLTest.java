@@ -52,7 +52,7 @@ public class ReadYAMLTest {
     }
 	
 	
-	@Test
+	@Ignore
     public void givenYAMLFileThenReadTheContentAndReturnMappingBeanClass() {
 
 		Commands commands = readYAML.parseYAMLFiletoClass("commands/otd/configuration.yml", Commands.class);
